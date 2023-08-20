@@ -1,0 +1,11 @@
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+    Dim objComboBox As Excel.Shape
+    Set objComboBox = Sheets(1).Shapes("Drop Down 6")
+    objComboBox.ControlFormat.RemoveAllItems
+    ThisWorkbook.Save
+    Set objComboBox = Nothing
+End Sub
+
+Private Sub Workbook_Open()
+    Call GetOutlookAccountsInfo
+End Sub
